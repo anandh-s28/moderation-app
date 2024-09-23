@@ -13,14 +13,6 @@ export default function LoginPage() {
       <div className="grid w-full gap-2">
         <form>
           <Input
-            id="display_name"
-            name="display_name"
-            type="display_name"
-            required
-            className="border border-stone-800 mb-2"
-            placeholder="User Name"
-          />
-          <Input
             id="email"
             name="email"
             type="email"

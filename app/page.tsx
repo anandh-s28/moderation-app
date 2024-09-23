@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/ui/navbar";
+import Posts from "@/components/ui/posts";
 import { Textarea } from "@/components/ui/textarea";
 import { Bird } from "lucide-react";
 import { FormEvent } from "react";
@@ -34,6 +35,7 @@ export default function Home() {
         </form>
         <div>
           <h1 className="text-xl tracking-tight mt-5">your feed</h1>
+          <Posts />
         </div>
       </div>
     </div>
