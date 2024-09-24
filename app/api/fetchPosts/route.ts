@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
         }
     );
 
-    const { data, error } = await supabase.from("posts").select("*");
+    const { data, error } = await supabase.from("posts").select(`content, user_id, id, created_at, user_profile: user_id (display_name)`);
 
     if (error) {
         return NextResponse.error();

@@ -18,7 +18,7 @@ export default function Navbar({ onLogout }: NavbarProps) {
         <li>
           <Button
             variant="ghost"
-            className="text-sm hover:bg-accent hover:text-accent-foreground"
+            className="text-sm hover:bg-accent hover:text-accent-foreground font-medium"
             onClick={onLogout}
           >
             logout
@@ -27,4 +27,25 @@ export default function Navbar({ onLogout }: NavbarProps) {
       </ul>
     </nav>
   );
+}
+
+// Function to handle logout
+export async function handleLogout() {
+  try {
+    const response = await fetch("/auth/signout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      // Redirect to home page or login page after successful logout
+      window.location.href = "/";
+    } else {
+      console.error("Failed to logout");
+    }
+  } catch (error) {
+    console.error("An error occurred during logout", error);
+  }
 }
